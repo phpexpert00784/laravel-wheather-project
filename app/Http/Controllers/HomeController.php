@@ -27,7 +27,7 @@ class HomeController extends Controller
     public function index()
     {
         $user =  Auth::user();
-        $data = array();
+        $newArr = array();
 
         //code is commented due to redis serer. But settings are done for redis server
 
@@ -52,12 +52,10 @@ class HomeController extends Controller
                 $data = json_decode($result->content)->main;
                 $newArr['user'] = $user->toArray();
                 $newArr['main'] = $data;
-                echo "<pre>";print_r($newArr);die;
+                
             }
         }
-            
-        
-        return view('home')->with('data',$data);
+        return view('home')->with('data',$newArr);
     }
 
 

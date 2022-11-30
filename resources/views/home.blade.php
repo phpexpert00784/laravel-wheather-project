@@ -36,23 +36,32 @@ table, th, td {
                           <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
 
-
-                    <h2 class="text-center">Wheather Info</h2>
-                    <table style="width:100%">
-                      <tr>
-                        <th>Month</th>
-                        <td>$100</td>
-                      </tr>
-                      <tr>
-                        <th>Month</th>
-                        <td>$100</td>
-                      </tr>
-                      <tr>
-                        <th>Month</th>
-                       <td>$100</td>
-                      </tr>
-                      
-                    </table>
+                    @if($data['main'])
+                        <h2 class="text-center">Wheather Info</h2>
+                        <table style="width:100%">
+                          <tr>
+                            <th>Temprature</th>
+                            <td>{{ $data['main']->temp }}</td>
+                          </tr>
+                          <tr>
+                            <th>Pressure</th>
+                            <td>{{ $data['main']->pressure }}</td>
+                          </tr>
+                          <tr>
+                            <th>Humidity</th>
+                           <td>{{ $data['main']->humidity }}</td>
+                          </tr>
+                          <tr>
+                            <th>Minimum Temp</th>
+                           <td>{{ $data['main']->temp_min }}</td>
+                          </tr>
+                          <tr>
+                            <th>Max Temp</th>
+                           <td>{{ $data['main']->temp_max }}</td>
+                          </tr>
+                          
+                        </table>
+                    @endif
                 </div>
             </div>
         </div>
